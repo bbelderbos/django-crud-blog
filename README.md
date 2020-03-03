@@ -21,7 +21,7 @@ Creat, Read, Update, Delete
 
 ## Update - Blog Detail
 
-<img src=".\documentation\images\update.PNG" style="zoom:75%;" />
+<img src=".\documentation\images\edit.PNG" style="zoom:75%;" />
 
 ### learning from this tutorial
 
