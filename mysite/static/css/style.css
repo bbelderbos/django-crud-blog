@@ -1,0 +1,35 @@
+.nav-item {
+    font-size: 4em;
+    color: white;
+    text-decoration: none;
+}
+
+.thumb {
+    max-width: 100px;
+}
+
+.debug {
+    border-color: red;
+    border-width: 3px;
+    border-style: solid;
+}
+
+.logo {
+    max-height: 20px;
+
+}
+
+
+.margin-top-5 {
+    margin-top: 3em;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #c1c1c1;
+    color: rgb(39, 38, 38);
+    text-align: center;
+}

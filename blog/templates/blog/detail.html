@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>{{context.title}}</h1>
+
+<p class=""><img class="thumb" src="{{context.cover}}" alt=""></p>
+<h1>{{context.slug}}| {{context.id}}</h1>
+<p><span>{{context.added}}</span> | <span>{{context.edited}}</span></p>
+<p>{{context.post}}</p>
+<p>
+    <a href="{% url 'blog:blog_delete' context.id %}">
+        <button class="mui-btn mui-btn--small mui-btn--danger"><i class="glyphicon glyphicon-remove"></i></button>
+    </a>
+    <a href="{% url 'blog:blog_edit' context.id %}">
+        <button class="mui-btn mui-btn--small mui-btn--primary"><i class="glyphicon glyphicon-pencil"></i></button>
+    </a>
+</p>
+{% endblock %}

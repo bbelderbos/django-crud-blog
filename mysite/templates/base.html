@@ -2,26 +2,67 @@
 <!doctype html>
 
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
 
-  <title>My first Django app</title>
+  <title>Blogster</title>
   <meta name="description" content="My first Django app">
   <meta name="author" content="PDM">
+  <link href="//cdn.muicss.com/mui-0.10.1/css/mui.min.css" rel="stylesheet" type="text/css" />
 
   <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
-  <!-- if you want some nice styling: -->
-  <script src="//cdn.muicss.com/mui-0.10.1/js/mui.min.js"></script>
 
+  {% comment %} https://glyphicons.bootstrapcheatsheets.com/# {% endcomment %}
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
-  {% block content %}{% endblock %}
+
+  <header class="mui-appbar">
+    <div class="mui-container">
+      <table width="100%">
+        <tr style="vertical-align:middle;">
+          <td class="mui--appbar-height">
+            <a href="{% url 'blog:blog_list' %}" data-mui-toggle="tab" data-mui-controls="pane-default-2"><img
+                class="logo" src="{% static 'img/logo.png' %}" alt=""></a>
+          </td>
+          <td class="mui--appbar-height" align="right">
+
+            <a href="{% url 'blog:blog_list' %}"><button class="mui-btn mui-btn--raised">Blogs</button></a>
+
+            <a href="{% url 'blog:blog_new' %}"><button class="mui-btn mui-btn--raised">Create Post</button></a>
+
+          </td>
+        </tr>
+      </table>
+
+
+    </div>
+  </header>
+
+  {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+      {% endfor %}
+  </ul>
+  {% endif %}
+
+
+  <div class="mui-container">
+    {% block content %}{% endblock %}
+  </div>
   <script src="{% static 'js/script.js' %}"></script>
 
-  <footer>
-    Made with ♥ by a NAME|PyBites Ninja
+
+  <footer class="footer">
+    <div class="mui-container mui--text-center">
+      Made with ♥ by a <a href="https://github.com/bfmcneill">Ben McNeill</a> | PyBites Ninja
+    </div>
   </footer>
+
+  <script src="//cdn.muicss.com/mui-0.10.1/js/mui.min.js"></script>
 </body>
 
 </html>

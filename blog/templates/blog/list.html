@@ -1,6 +1,24 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 
+<div class="margin-top-5">
 
+    {% if blogs %}
+    {% for obj in blogs %}
+
+    <div class="mui-panel">
+        <h1>{{active}}</h1>
+        <a href="{% url 'blog:blog_detail' obj.id %}">
+            <h2>{{obj.title}}</h2>
+        </a>
+        {% comment %} <p>{{obj.slug}}</p> {% endcomment %}
+        <p><span>{{obj.edited}}</span></p>
+        <p>{{obj.post|slice:":50"}}...</p>
+        <p class=""><img class="thumb" src="{{obj.cover}}" alt=""></p>
+    </div>
+
+    {% endfor %}
+    {% endif %}
+</div>
 {% endblock %}

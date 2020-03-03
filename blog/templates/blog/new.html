@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<legend>New Post</legend>
+<form method="POST" class="mui-form">
+    {% csrf_token %}
+
+    <div class="mui-textfield">
+        <input type="text" name="title" placeholder="New Title">
+    </div>
+
+    <div class="mui-textfield">
+        <textarea name="post" placeholder="content for blog ..."></textarea>
+    </div>
+
+    <div class="mui-textfield">
+        <input type="text" name="slug" placeholder="blog slug">
+    </div>
+
+    <div class="mui-textfield">
+        <input type="text" name="cover" placeholder="url for cover image...">
+    </div>
+
+    <button class="mui-btn mui-btn--raised mui-btn--accent" type="submit">Save</button>
+</form>
+{% endblock %}
