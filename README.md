@@ -1,6 +1,6 @@
 # Django starter
 
-Build a simple blog app
+Build a simple blog app using the [pybites/django-starter](https://github.com/pybites/django-starter)
 
 C.R.U.D
 Creat, Read, Update, Delete
