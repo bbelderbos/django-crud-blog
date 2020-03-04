@@ -6,23 +6,23 @@
     {% csrf_token %}
 
     <div class="mui-textfield">
-        <input type="text" name="title" placeholder="{{form.title}}">
         <label>Title</label>
+        <input type="text" name="title" placeholder="title" value="{{form.title.value}}">
     </div>
 
     <div class="mui-textfield">
-        <textarea name="post" placeholder="{{form.post}}"></textarea>
         <label>Post Content</label>
+        <textarea name="post" placeholder="content">{{form.post.value}}</textarea>
     </div>
 
     <div class="mui-textfield">
-        <input type="text" name="slug" placeholder="{{form.slug}}">
         <label>Slug</label>
+        <input type="text" name="slug" placeholder="slug" value="{{form.slug.value}}">
     </div>
 
     <div class="mui-textfield">
-        <input type="text" name="cover" placeholder="{{form.cover}}">
         <label>Cover URL</label>
+        <input type="text" name="cover" placeholder="cover url" value="{{form.cover.value|default:""}}">
     </div>
 
     <button class="mui-btn mui-btn--raised mui-btn--accent" type="submit">Save</button>
